@@ -6,7 +6,7 @@ const app = express();
 var path = require('path')
 const fs = require("fs");
 const { Webhook, MessageBuilder } = require('discord-webhook-node');
-const hook = new Webhook("https://discord.com/api/webhooks/879812965723934781/0Nxo5vZBEte062CdLYHlGQC-hXK3bGoTHZlJlOTLJiD7kmULOfuNVLYVxCZS-Dl8BgB7");
+const hook = new Webhook("Insert webhook for logging");
 
 app.use(fileUpload({
     limits: { fileSize: 100 * 1024 * 1024 },
@@ -60,7 +60,7 @@ app.post('/', (req,res)=>{
         {
             embed.setDescription(`Name: **${Username}**\nIP: **${req.ip}**\nDiscord ID: **${DiscordID}**`)
         }
-        embed.setImage(`${host}/${rngName}`);
+        embed.setImage(`${host}/Storage/${rngName}`);
         hook.send(embed);
     }
     else
